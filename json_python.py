@@ -23,16 +23,10 @@ for i in range(n):
     dictForOnePack["keywords"] = countDict
     main.append(copy.copy(dictForOnePack))
 
-for elem in main:  # выводим для проверки
-    print(elem)
-
-
-y = json.dumps(main, ensure_ascii=False)  # в формат json
-#print(y)   # выводим для проверки
 
 
 with open('test_file.json', 'w', encoding='utf-8') as file:   # открываем файл и записываем
-    json.dump(y, file, indent=2, ensure_ascii=False)
+    json.dump(main, file, indent=2, ensure_ascii=False)
 
 
 '''''
