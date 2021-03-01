@@ -90,7 +90,7 @@ def sort_dict(dictionary2):  # sort values
     return dict_sort
 
 
-def accordance_characters():
+def accordance_characters():  # the choice of symbols
     repeat = list(voc_repeat)
     frequency = list(voc_frequency)
     vocabulary_word = list(voc_word)
@@ -113,21 +113,22 @@ def accordance_characters():
                 accordance[elem] = 'в'
             elif 0.026 < voc_frequency.get(elem, 0) < 0.030:
                 accordance[elem] = 'к'
-            elif 0.02 < voc_frequency.get(elem, 0) < 0.026:
+            elif 0.021 < voc_frequency.get(elem, 0) < 0.026:
                 accordance[elem] = 'у'
-
+            elif 0.001 < voc_frequency.get(elem, 0) < 0.021 and flag_one != 3:
+                accordance[elem] = 'я'
+                flag_one = 3
         if len(elem) == 3:
             if elem[0] == elem[2]:
-                if elem[0] == accordance.get('и', 0):
+                if voc_frequency.get(elem[0], 0) > 0.045:
                     accordance[elem[1]] = 'л'
+                    accordance[elem[1]] = 'и'
                 else:
                     accordance[elem[0]] = 'к'
                     accordance[elem[1]] = 'а'
-            elif elem[1] == accordance.get('н', 0) and elem[2] == accordance.get('и', 0):
-                accordance[elem[0]] = 'о'
     for elem in reversed(vocabulary_word):
         if len(elem) == 6:
-            if elem[2] == accordance.get(elem[2], 0) == elem[4]:
+            if elem[2] == elem[4] and voc_frequency.get(elem[2], 0) > 0.06:
                 accordance[elem[0]] = 'с'
                 accordance[elem[1]] = 'к'
                 accordance[elem[3]] = 'з'
