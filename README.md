@@ -2,7 +2,7 @@
 - [:uk: ENG](./README.md) - English documentation
 
 # About
-Allows you to decrypt some of the characters in the encrypted text. The probability of a match is 60% - 80%.
+Allows you to decrypt some of the characters in the encrypted text. The probability of a match is 80% - 100%.
 # input.txt
 The program takes encrypted text from input.txt.
 # output.json
